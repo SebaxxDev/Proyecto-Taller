@@ -32,3 +32,4 @@ git push origin main(los cambios en el repositorio local se van al remoto main e
 git restore "nombredelarchivo.txt por ejemplo" (restaura a como esta el repositorio local)
 git fetch (restaura localmente lo que está en el repositorio remoto)
 git remote update (sólo para saber si el remoto cambió)
+git checkout
