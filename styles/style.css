@@ -13,7 +13,11 @@ body {
 }
 
 .container { /*El fondo completo*/
-  background-color: #ebeff3;
+  background-image: url('/images/background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  /*background-color: #ebeff3;*/
   min-height: 100vh; /*altura de la pagina*/
   padding: 1px;
   display: flex;
@@ -24,7 +28,7 @@ body {
 
 .barraSuperior {
   background: #8a95f3;
-  width: 1000px;
+  width: 100%;
   height: 80px;
   border: 1px solid red;
   padding: 10px;
@@ -55,16 +59,42 @@ main { /*dentro del fondo*/
   justify-content: center;
   align-items: center;
   width: 1920px; /*ancho de todo el elemento main y lo que contiene*/
-  height: 1080px;
   max-width: 1920px;
   max-height: 1080px; 
+}
+
+table{
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td{
+	padding: 20px;
+  
+}
+
+thead{
+	background-color: #246355;
+	border-bottom: solid 5px #0F362D;
+	color: white;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: #369681;
+	color: white;
 }
 
 footer {
   background-color: rgb(192, 230, 88);
   width: 1920px;
-  height: 100px;
-  border-top: 1px solid #7a0303;
+  height: 50px;
+  border-top: 5px solid #7a0303;
   display: flex;
   justify-content: center; /*ajusta horizontalmente el texto*/
   align-items: center;
