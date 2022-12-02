@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import React,{useState,useEffect} from "react";
 
 const Index = () => {
   return (
@@ -24,13 +25,13 @@ const Index = () => {
       <main>
         
         <div className="barraSuperior">
-        Próximas actividades
+          Próximas actividades
         </div>
         
         <table>
-        <tr>
+          <tr>
             <td>BAIN081</td><td>Cálculo</td><td>Prueba</td><td>10/11/22</td>
-        </tr>
+          </tr>
         </table>
 
         <table>
