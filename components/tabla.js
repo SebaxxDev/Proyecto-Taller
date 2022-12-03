@@ -1,3 +1,4 @@
+import CargaDatos from "./cargaDatos";
 
 
 export function Datos2(){
@@ -18,12 +19,9 @@ export function Datos2(){
 
 //function bucleFor()
 
-function CrearTabla(datos,n){
-    var data = datos;
+function CrearTabla(n){
     for(var i=0; i<n;i++){
-        <td>${data[i].codigo}</td>
-            
-       
+        CargaDatos(i)
         console.log(i+10)
     }
 };

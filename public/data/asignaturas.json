@@ -1,6 +1,25 @@
-
 [
-    {"codigo":"BAIN085", "asignatura":"Calculo en varias variables", "tipo":"Prueba", "fecha":"11/10/22"},
-    {"codigo":"BAIN023", "asignatura":"Geometria", "tipo":"Prueba", "fecha":"13/10/22"}
+    {
+    "id":"1",
+    "codigo":"BAIN085", 
+    "asignatura":"Calculo en varias variables", 
+    "tipo":"Prueba", 
+    "fecha":"11/10/22",
+    "hora":"17:30:00"},
+
+    {
+    "id":"2",
+    "codigo":"BAIN023", 
+    "asignatura":"Geometria", 
+    "tipo":"Prueba", 
+    "fecha":"13/10/22",
+    "hora":"17:30:00"},
+    {
+        "id":"3",
+        "codigo":"BAIN200", 
+        "asignatura":"Investigacion operativa", 
+        "tipo":"Prueba", 
+        "fecha":"29/10/22",
+        "hora":"17:30:00"}
 
 ]

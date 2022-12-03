@@ -1,19 +1,31 @@
 import {RelojAct} from "../components/relojAct"
-import CrearTabla, { Datos2 } from "../components/tabla";
+import { Datos2 } from "../components/tabla";
 import Contador from "../components/contador"
+import CrearTabla from "../components/cargaDatos";
+import React,{ useEffect, useState} from "react"
+
+
 
 
 var reloj = RelojAct();
 var data = Datos2();
 var n = data.length;
 
-var i = 0;
+
 
 
 
 
 function index(){
-  
+    const [datable, setDatable] = useState([])
+
+    useEffect(()=>{
+        fetch("http://localhost:3000/data/asignaturas.json")
+            .then(response => response.json())
+            .then(datos => {
+                setDatable(datos)
+            })
+    }, [])
     
     return(           
         <body>       
@@ -28,7 +40,36 @@ function index(){
                         <div className="fechaTitu">Fecha</div>
                 </div>
                 <div className="tabla1">
-                    <div className="codigo2">{CrearTabla(data,n)}</div>
+                    <div className="row">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">id</th>
+                                    <th scope="col">codigo</th>
+                                    <th scope="col">asignatura</th>
+                                    <th scope="col">tipo</th>
+                                    <th scope="col">fecha</th>
+                                    <th scope="col">hora</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {datable.map(item => (
+                                    <tr key={item.id}>
+                                        <td>{item.codigo}</td>
+                                        <td>{item.asignatura}</td>
+                                        <td>{item.tipo}</td>
+                                        <td>{item.fecha}</td>
+                                        <td>{item.hora}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                    
+                    
+                    
+                
                 
                 </div>
 
