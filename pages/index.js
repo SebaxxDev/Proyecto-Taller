@@ -1,27 +1,32 @@
 import React,{ useEffect, useState, useMemo} from "react"
 import Head from "next/head"
 import Image from "next/image"
+import { RelojAct } from "../components/relojAct";
+import TextoReloj from "../components/textoreloj";
 
 
 
 
-function index(){
+
+const Index = ()=>{
     const [datable, setDatable] = useState([])
+    const [time, changeTime] = useState(new Date().toLocaleTimeString());
+
+    useEffect(function(){
+        setInterval(()=>{
+            changeTime(new Date().toLocaleTimeString());
+        },1000);
+    }, []);
 
     useEffect(()=>{
         fetch("http://localhost:3000/data/asignaturas.json")
             .then(response => response.json())
             .then(datos => {
                 setDatable(datos)
-            })
-            
-            
-    }, [])
+            })   
+    }, []);
 
-    
 
-    
-    
     return(                
         <div className="container">
             <Head>
@@ -36,7 +41,10 @@ function index(){
                     alt="Logo"
                 />
                 <h1 className="titulo">Próximas Actividades</h1>
-                <div className="reloj">00:00:00</div>
+                <div className="reloj">
+                    <TextoReloj texto={time}/>
+                </div>
+                
                 
                 
                 <div className="tabla1">
@@ -68,6 +76,6 @@ function index(){
                 </div>
             </main>
         </div>     
-    )
-}
-export default index;
+    );
+};export default Index;
+

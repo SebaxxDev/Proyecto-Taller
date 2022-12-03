@@ -15,19 +15,14 @@ body {
   display: grid;
   grid-template-columns: repeat(8,1fr);
   grid-template-rows: repeat(10,1fr);
-  height: 620px;
-  width: 1366px;
+  
   
 }
 
 
 main {
   display: grid;
-  grid-template-columns: repeat(8,1fr);
-  grid-template-rows: repeat(10,1fr);
-  height: 620px;
-  width: 1366px;
-  
+  grid-area: auto;
 }
 
 .logo{
