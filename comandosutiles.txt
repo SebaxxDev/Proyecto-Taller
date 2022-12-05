@@ -24,12 +24,12 @@ git push -u origin master
 
 --------------------------------------------------------------------------------------------
 git clone https://github.com/Luis-iom/pruebasgit.git (url del repositorio remoto)
-git status (te dice si hay cambios en el archivo vs repositorio)
+git status (te dice si hay cambios en tus archivos,comparado al repo local)
+git pull (trae todo lo nuevo del repo remoto al local)
 git add . (agrega todo lo nuevo que agregue al repositorio local incluye lo borrado)
 git commit -m "agregar comentario" (versiona los cambios agregados en el repo local)
-git pull (trae todo lo nuevo del repo remoto al local, se hace antes del push)
-git push origin main(los cambios en el repositorio local se van al remoto main en github)
+git push origin "nombredelbranch"(los cambios en el repositorio local se van al remoto main en github)
 git restore "nombredelarchivo.txt por ejemplo" (restaura a como esta el repositorio local)
 git fetch (restaura localmente lo que está en el repositorio remoto)
 git remote update (sólo para saber si el remoto cambió)
-git checkout
+git checkout "nombredelbranch" (así te cambias de branch)
