@@ -104,7 +104,12 @@ body {
   border-radius: 14px;
 }
 
-
+.botonFiltro{
+  /*FilaInicio/ ColumnaInicio/ FilaTermino/ ColumnaTermino*/
+  
+  grid-area: 9/6/9/7;
+  margin-left: 100px;
+}
 
 
 

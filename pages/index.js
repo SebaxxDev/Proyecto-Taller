@@ -1,15 +1,16 @@
 import React,{ useEffect, useState, useMemo} from "react"
 import Head from "next/head"
 import Image from "next/image"
-import { RelojAct } from "../components/relojAct";
 import TextoReloj from "../components/textoreloj";
+import BotonFiltrado from "../components/botonFiltrado";
+import { LectorDatos } from "../components/lectorDatos";
 
 
 
 
 
 const Index = ()=>{
-    const [datable, setDatable] = useState([])
+   
     const [time, changeTime] = useState(new Date().toLocaleTimeString());
 
     useEffect(function(){
@@ -18,14 +19,16 @@ const Index = ()=>{
         },1000);
     }, []);
 
-    useEffect(()=>{
-        fetch("http://localhost:3000/data/asignaturas.json")
-            .then(response => response.json())
-            .then(datos => {
-                setDatable(datos)
-            })   
-    }, []);
-
+    /*datable.sort((a,b)=>{ 
+        if(a.fecha[0] < b.fecha[0]){
+            return -1;
+        }
+    });
+    datable.sort((a,b)=>{ 
+        if(a.fecha[1] < b.fecha[1]){
+                return -1;
+            }
+    });*/
 
     return(                
         <div className="container">
@@ -44,32 +47,12 @@ const Index = ()=>{
             <div className="reloj">
                 <TextoReloj texto={time}/>
             </div>
-            <div className="tabla1">
-                <div className="row">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th scope="col">Codigo</th>
-                                <th scope="col">Asignatura</th>
-                                <th scope="col">Tipo</th>
-                                <th scope="col">Fecha</th>
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {datable.map(item => (
-                                <tr key={item.id}>
-                                    <td>{item.codigo}</td>
-                                    <td>{item.asignatura}</td>
-                                    <td>{item.tipo}</td>
-                                    <td>{item.fecha}</td>
-                                    
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+
+            <div className="tabla1"> {LectorDatos()}</div>
+            
+            <div className="botonFiltro">{BotonFiltrado()}</div>
+
+            
         
             
     </div>     
