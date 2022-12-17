@@ -20,7 +20,7 @@
     "asignatura":"Metodos Numericos", 
     "tipo":"Prueba",
     "porcentaje": "30%", 
-    "fecha":["28","12","22"],
+    "fecha":["29","12","22"],
     "hora":"17:30:00"},
     
     {
@@ -61,6 +61,20 @@
     "tipo":"Prueba", 
     "porcentaje":"20%",
     "fecha":["30","11","22"],
+    "hora":"10:30:00"},
+    {
+    "codigo":"BAIN085", 
+    "asignatura":"Calculo en varias variables", 
+    "tipo":"Prueba", 
+    "porcentaje":"20%",
+    "fecha":["17","12","22"],
+    "hora":"10:30:00"},
+    {
+    "codigo":"BAIN085", 
+    "asignatura":"Calculo en varias variables", 
+    "tipo":"Prueba", 
+    "porcentaje":"20%",
+    "fecha":["15","12","22"],
     "hora":"10:30:00"}
 
 ]

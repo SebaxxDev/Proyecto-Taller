@@ -1,10 +1,32 @@
-import LectorDatos from "./lectorDatos";
+// Estos imports solo son para ayudar el autocompletado.
+// Originalmente estos si son necesarios para usar TypeScript.
+import { NextApiRequest, NextApiResponse } from "next";
+import { useEffect, useState } from "react";
+import { OrdenFiltro } from "../../components/ordenfiltro";
+
+/**
+ *
+ * @param {NextApiRequest} req
+ * @param {NextApiResponse} res
+ */
+export default async (req, res) => {
+    console.log("Json recibido ");
+    const [value, setValue] = useState();
+    useEffect(()=>{
+        setValue(OrdenFiltro(req))
+    })
+
+    res.send({
+        value
+    });
+};
+
+function OrdenFiltro(req){
+    datable = req.datable;
+    i = req.value;
 
 
-
-export function OrdenFiltro(i, datable){
-
-    console.log("i original: ",i)
+    console.log("i: ",i)
     
 
     
@@ -24,7 +46,7 @@ export function OrdenFiltro(i, datable){
     }
 
     if(i==1){
-        console.log("i: ", 1.1)
+        console.log("i: ", 0.0)
         datable.sort((a,b)=>{ 
             if(a.fecha[0] > b.fecha[0]){
                 
@@ -48,7 +70,5 @@ export function OrdenFiltro(i, datable){
             }
         });  
     }
-    
-    
     
 }
