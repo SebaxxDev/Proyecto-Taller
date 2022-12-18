@@ -122,10 +122,10 @@ export function LectorDatos(){
                 </MenuButton>
                 <MenuList>
                     <MenuOptionGroup defaultValue='0' title='Orenar por:' type='radio'>
-                        <MenuItemOption onClick={() => {setValue(0)}} value='0'>Fecha Ascendente</MenuItemOption>
-                        <MenuItemOption onClick={() => {setValue(1)}} value='1'>Fecha Descendente</MenuItemOption>
-                        <MenuItemOption onClick={() => {setValue(2)}} value='2'>Codigo Asignatura</MenuItemOption>
-                        <MenuItemOption onClick={() => {setValue(3)}} value='3'>muerte</MenuItemOption>
+                        <MenuItemOption onClick={() => {setValue(0)}} value='0'>Mas Antiguo</MenuItemOption>
+                        <MenuItemOption onClick={() => {setValue(1)}} value='1'>Mas Reciente</MenuItemOption>
+                        <MenuItemOption onClick={() => {setValue(2)}} value='2'>Código Asignatura</MenuItemOption>
+                        <MenuItemOption onClick={() => {setValue(3)}} value='3'>Fecha mas Próxima</MenuItemOption>
                     </MenuOptionGroup>
                 </MenuList>
             </Menu>
@@ -135,7 +135,7 @@ export function LectorDatos(){
             <table>
                 <thead>
                     <tr>
-                        <th scope="col">Codigo</th>
+                        <th scope="col">Código</th>
                         <th scope="col">Asignatura</th>
                         <th scope="col">Tipo</th>
                         <th scope="col">Fecha</th>

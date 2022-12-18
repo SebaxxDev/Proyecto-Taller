@@ -41,9 +41,7 @@ const Index = ()=>{
             <div className="reloj">
                 <TextoReloj texto={time}/>
             </div>
-            <div className="cuentaRegresiva">
-                <CuentaRegresiva texto={time}/>
-            </div>
+            <div className="cuentaRegresiva"><CuentaRegresiva/></div>
             
             <div className="container2"> {LectorDatos()}</div>
             

@@ -48,10 +48,6 @@ body {
   
 }
 
-
-
-
-
 .tabla1{
   display:grid;
   border:#5a4820 2px solid;
@@ -60,14 +56,11 @@ body {
   font-size: 1rem;
   text-align: center;
   border-radius: 15px;
-  
-  
   overflow-y: scroll;
 }
 .tabla1 th{
   padding-top: 12px;
   padding-bottom: 12px;
-  
   background-color: #ce9a2a ;
   color: rgb(243, 240, 240);
 }
@@ -91,8 +84,38 @@ body {
   width: 120px;
 }
 
+.cuentaRegresiva{
+  display: grid;
+  grid-area: 3/3/3/7;
+  padding-bottom: 10px;
+}
+.tabla2{
+  display:grid;
+  border: #3b80db 5px solid;
+  /*FilaInicio/ ColumnaInicio/ FilaTermino/ ColumnaTermino*/
+  font-size: 1rem;
+  text-align: center;
+  background-color: rgb(247, 129, 113);
+  border-radius: 15px;
+ 
+}
 
-
+.tabla2 td{
+  border: 1px solid #3b80db;
+  padding: 8px;
+}
+.tabla2 td:first-child{
+  width: 120px;
+}
+.tabla2 td:nth-child(2){
+  width: 100px;
+}
+.tabla2 td:nth-child(3){
+  width: 320px;
+}
+.tabla2 td:nth-child(4){ 
+  width: 220px;
+}
 
 .reloj{
   border: #3b80db 5px solid;
@@ -106,18 +129,10 @@ body {
 
 .botonFiltro{
   /*FilaInicio/ ColumnaInicio/ FilaTermino/ ColumnaTermino*/
-  
   grid-area: 9/6/10/7;
   text-align: center;
   margin-left: 100px;
 }
-
-.cuentaRegresiva{
-  grid-area: 3/3/3/7;
-  border-radius: 15px;
-  border: #3b80db 5px solid;
-}
-
 
 .container2{
   display: grid;
