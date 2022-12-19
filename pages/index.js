@@ -38,7 +38,7 @@ const Index = ()=>{
             </Head>
             <div className="logo">
             <Image
-                src="/images/UachLogoLargo.png"
+                src="/images/logo_uach.png"
                 height={111}
                 width={425}
                 alt="Logo"
