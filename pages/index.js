@@ -2,12 +2,11 @@ import React,{ useEffect, useState, useMemo} from "react"
 import Head from "next/head"
 import Image from "next/image"
 import TextoReloj from "../components/textoreloj";
-import {BotonFiltrado} from "../components/botonFiltrado"
+
 import { LectorDatos } from "../components/lectorDatos";
-import {ValueMenu} from "../components/botonFiltrado"
+
 import CuentaRegresiva from "../components/cuentaRegresiva";
 
-import xdd from "../components/xdddd";
 
 
 

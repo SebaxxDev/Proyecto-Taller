@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 
 export default function CuentaRegresiva(){
     
-    var fechaAct = fecha()//fecha local actual [dia/mes/año]->[0,1,2]
-    var horaAct = hora() //hora local actual  [hora/min/sgd]->[0,1,2]
-    var primer_ramo = datos(fechaAct) //datos del ramo mas cercano actual(hora->17:30:00)
+    var fechaAct = fecha()//fecha local actual 
+    var horaAct = hora() //hora local actual  
+    var primer_ramo = datos(fechaAct) //datos del ramo mas cercano actual
     
     var dias_faltantes = calculaDias(primer_ramo?.fecha,fechaAct) 
     var reloj_faltante = calculaReloj(primer_ramo?.hora, horaAct)
@@ -127,6 +127,9 @@ export function calculaReloj(reloj_ramo, reloj){
     if(min<0){
         min = 60+min
         hrs = hrs-1
+    }
+    if(hrs<0){
+        hrs = 24+hrs
     }
 
     if(sgd < 10){
