@@ -4,6 +4,7 @@
     "asignatura":"Calculo en varias variables", 
     "tipo":"Prueba", 
     "porcentaje":"20%",
+    "evaluacion":"PS 1",
     "fecha":["11","11","22"],
     "hora":"17:30:00"},
 
@@ -12,6 +13,7 @@
     "asignatura":"Geometria", 
     "tipo":"Prueba", 
     "porcentaje":"30%",
+    "evaluacion":"PS 1",
     "fecha":["13","12","22"],
     "hora":"17:30:00"},
 
@@ -19,15 +21,17 @@
     "codigo":"BAIN087", 
     "asignatura":"Metodos Numericos", 
     "tipo":"Prueba",
-    "porcentaje": "30%", 
-    "fecha":["28","12","22"],
+    "porcentaje": "35%", 
+    "evaluacion":"PS 3",
+    "fecha":["29","12","22"],
     "hora":"17:30:00"},
     
     {
     "codigo":"BAIN087", 
     "asignatura":"Metodos Numericos", 
     "tipo":"Prueba",
-    "porcentaje": "35", 
+    "porcentaje": "35%",
+    "evaluacion":"PS 2", 
     "fecha":["30","11","22"],
     "hora":"17:30:00"},
 
@@ -35,7 +39,8 @@
     "codigo":"BAIN087", 
     "asignatura":"Metodos Numericos", 
     "tipo":"Prueba",
-    "porcentaje": "35", 
+    "porcentaje": "35%", 
+    "evaluacion":"PS 3",
     "fecha":["28","12","22"],
     "hora":"17:30:00"},
 
@@ -44,6 +49,7 @@
     "asignatura":"Calculo en varias variables", 
     "tipo":"Prueba", 
     "porcentaje":"20%",
+    "evaluacion":"PS 1",
     "fecha":["02","11","22"],
     "hora":"17:30:00"},
     
@@ -52,6 +58,7 @@
     "asignatura":"Calculo en varias variables", 
     "tipo":"Prueba", 
     "porcentaje":"20%",
+    "evaluacion":"PS 1",
     "fecha":["11","10","22"],
     "hora":"17:30:00"},
 
@@ -60,7 +67,24 @@
     "asignatura":"Calculo en varias variables", 
     "tipo":"Prueba", 
     "porcentaje":"20%",
+    "evaluacion":"PS 1",
     "fecha":["30","11","22"],
+    "hora":"10:30:00"},
+    {
+    "codigo":"BAIN085", 
+    "asignatura":"Calculo en varias variables", 
+    "tipo":"Prueba", 
+    "porcentaje":"20%",
+    "evaluacion":"PS 1",
+    "fecha":["17","12","22"],
+    "hora":"10:30:00"},
+    {
+    "codigo":"BAIN085", 
+    "asignatura":"Calculo en varias variables", 
+    "tipo":"Prueba", 
+    "porcentaje":"20%",
+    "evaluacion":"PS 1",
+    "fecha":["15","12","22"],
     "hora":"10:30:00"}
 
 ]
