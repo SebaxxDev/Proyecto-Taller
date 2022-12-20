@@ -19,7 +19,7 @@ body {
   display: grid;
   grid-template-columns: repeat(8,1fr);
   grid-template-rows: repeat(10,1fr);
-  height: 620px;
+  height: 100%;
   width: 100%;
 }
 
@@ -27,7 +27,7 @@ body {
 .titulo{
   grid-area: 1/2/1/8;
   margin-top: 60px;
-  font-size: 2rem;
+  font-size: 4rem;
   text-align: center; 
 }
 
