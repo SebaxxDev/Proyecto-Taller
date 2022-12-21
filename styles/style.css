@@ -48,20 +48,6 @@ body {
   text-align: center;
 }
 
-.tabla1{ /*tabla con bordes negros*/
-  display:grid;
-  grid-area: 1/1/9/11;/*area del grid*/
-  border:#000000 5px solid;
-  border-radius: 15px; /*redondea las esquinas*/
-  /*padding-top: 12px;
-  padding-bottom: 12px;*/
-  justify-content: center;
-  max-width: 100%;
-  max-height: 40vh;
-  background-color: rgb(233, 225, 182);
-  overflow-y: scroll;
-}
-
 .cajaFija{
   grid-area: 2/2/3/8;
   display: grid;
@@ -101,7 +87,19 @@ body {
   font-style: oblique;
   text-align: center;
 }
-
+.tabla1{ /*tabla con bordes negros*/
+  display:grid;
+  grid-area: 1/1/9/11;/*area del grid*/
+  border:#000000 5px solid;
+  border-radius: 15px; /*redondea las esquinas*/
+  /*padding-top: 12px;
+  padding-bottom: 12px;*/
+  justify-content: center;
+  max-width: 100%;
+  max-height: 40vh;
+  background-color: rgb(233, 225, 182);
+  overflow-y: scroll;
+}
 .tabla1 th{ /*codigo/asignatura/tipo/fecha*/
   background-color: #00ff15;
   min-width: 220px;
@@ -115,7 +113,7 @@ body {
   padding: 8px; /*altura de cada rectángulo*/
   font-size: 1.1rem;
   text-align: center; /*centra el texto de las cajas blancas*/
-  min-width: 1000px;
+  width: 2000px;
 }
 .tabla1 td:first-child{ /*rectángulos con el codigo*/
   /*min-width: 120px;*/
@@ -191,6 +189,7 @@ body {
 
 .botonFiltro{
   grid-area: 9/10/10/11;
+  justify-self: end;
 }
 
 .container2{
