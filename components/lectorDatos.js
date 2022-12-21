@@ -133,15 +133,7 @@ export function LectorDatos(){
         <div className="tabla1">
             <div className="row">
             <table>
-                <thead>
-                    <tr>
-                        <th scope="col">Código</th>
-                        <th scope="col">Asignatura</th>
-                        <th scope="col">Tipo</th>
-                        <th scope="col">Fecha</th>
-                        
-                    </tr>
-                </thead>
+
                     <tbody>
                         {datable.map(item => (
                             <tr key={item.id}>

@@ -33,3 +33,20 @@ git restore "nombredelarchivo.txt por ejemplo" (restaura a como esta el reposito
 git fetch (restaura localmente lo que está en el repositorio remoto)
 git remote update (sólo para saber si el remoto cambió)
 git checkout "nombredelbranch" (así te cambias de branch)
+
+            <div className="cajaFija">
+                <div className="textoCodigo">Código</div>
+                <div className="textoAsignatura">Asignatura</div>
+                <div className="textoTipo">Tipo</div>
+                <div className="textoFecha">Fecha</div>
+            </div>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Código</th>
+                        <th scope="col">Asignatura</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Fecha</th>
+                        
+                    </tr>
+                </thead>

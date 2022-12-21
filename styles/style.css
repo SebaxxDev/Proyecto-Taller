@@ -29,12 +29,16 @@ body {
   margin-top: 10%;
   font-size: 4rem;
   text-align: center; 
+  max-width: 100%;
+  min-height: 100%;
 }
 
 .logo{ /*Logo UACH izq arriba*/
   grid-area: 1/1/2/2;
   margin-top: 10%;
   margin-left: 10%;
+  max-width: 100%;
+  max-height: 100%;
 }
 .title {
   margin: 20px 101px  ;
@@ -62,8 +66,8 @@ body {
   grid-area: 2/2/3/8;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  max-height: 15%;
-  margin-top: 13%;
+  max-height: 17%;
+  margin-top: 12%;
   border-radius: 10px;
   border: #000000 1px solid;
   background-color: #33ff00;
@@ -111,7 +115,7 @@ body {
   padding: 8px; /*altura de cada rectángulo*/
   font-size: 1.1rem;
   text-align: center; /*centra el texto de las cajas blancas*/
-  width: 2000px;
+  min-width: 1000px;
 }
 .tabla1 td:first-child{ /*rectángulos con el codigo*/
   /*min-width: 120px;*/
@@ -133,7 +137,7 @@ body {
 .cajaRoja{ /*tabla roja abarca todo lo de dentro*/
   display: grid;
   grid-area: 2/3/2/7;
-  margin-top: 5%; /*se separa del tope*/
+  margin-top: 0%; /*se separa del tope*/
   max-height: 40%; /*altura maxima según el grid en el que está*/
   max-width: 100%; /*ancho maximo según el grid en el que está*/
   
@@ -194,6 +198,21 @@ body {
   grid-area: 3/2/5/8;
   max-width: 100%;
   max-height: 40vh;
+}
+
+.linkinfoalumnos{
+  display: grid;
+  grid-area: 5/3/6/4;
+  justify-self: center;
+  max-width: 30%;
+  max-height: 30%;
+}
+.linksiveduc{
+  display: grid;
+  grid-area: 5/6/6/7;
+  justify-self: center;
+  max-width: 30%;
+  max-height: 30%;
 }
 
 @media (max-width: 600px) {
