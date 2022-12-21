@@ -41,7 +41,7 @@ export function LectorDatos(){
     }*/
 
     useEffect(()=>{
-        fetch("http://localhost:3000/data/asignaturas.json")
+        fetch("/data/asignaturas.json")
             .then(response => response.json())
             .then(datos => {
                 setDatable(datos)
