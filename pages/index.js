@@ -1,61 +1,50 @@
-import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
-import React,{useState,useEffect} from "react";
+import React,{ useEffect, useState, useMemo} from "react"
+import Head from "next/head"
+import Image from "next/image"
+import TextoReloj from "../components/textoreloj";
 
-const Index = () => {
-  return (
-    <div className="container">
+import { LectorDatos } from "../components/lectorDatos";
 
-      <Head>
-        <title>Fechas Importantes</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      
-      <nav>
-        <ul>
-          <li>
-            <a href="index.js">
-            </a>
-          </li>
-        </ul>
-      </nav>
-      
+import CuentaRegresiva from "../components/cuentaRegresiva";
 
-      <main>
-        
-        <div className="barraSuperior">
-          Próximas actividades
-        </div>
-        
-        <table>
-          <tr>
-            <td>BAIN081</td><td>Cálculo</td><td>Prueba</td><td>10/11/22</td>
-          </tr>
-        </table>
+const Index = ()=>{
+    const [time, changeTime] = useState(new Date().toLocaleTimeString());
 
-        <table>
-          <thead>
-            <tr>
-              <th>Código</th><th>Asignatura</th><th>Tipo</th><th>Fecha</th>
-            </tr>
-          </thead>
-          <tr>
-            <td>BAIN081</td><td>Cálculo</td><td>Prueba</td><td>10/11/22</td>
-          </tr>
-          <tr>
-            <td>BAIN075</td><td>Física</td><td>Prueba</td><td>18/12/22</td>
-          </tr>
-        </table>
-      </main>
-      
-      <footer>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank">
-          No clickear rick
-        </a>
-      </footer>
-    </div>
-  );
-};
+    useEffect(function(){
+        setInterval(()=>{
+            changeTime(new Date().toLocaleTimeString());
+        },1000);
+    }, []);
 
-export default Index;
+
+    return(                
+        <div className="container">
+            <Head>
+                <title>Próximas Evaluaciones</title>
+                <link rel="icon" href="/images/Uach_Logotipo.png"/>
+            </Head>
+            <div className="logo">
+            <Image
+                src="/images/logo_uach.png"
+                height={111}
+                width={425}
+                alt="Logo"
+            /></div>
+            <h1 className="titulo">Próximas Evaluaciones</h1>
+            <div className="reloj">
+                <TextoReloj texto={time}/>
+            </div>
+            <div className="cajaRoja"><CuentaRegresiva/></div>
+            
+            <div className="cajaFija">
+                <div className="textoCodigo">Código</div>
+                <div className="textoAsignatura">Asignatura</div>
+                <div className="textoTipo">Tipo</div>
+                <div className="textoFecha">Fecha</div>
+            </div>
+            
+            <div className="container2"> {LectorDatos()}</div>
+        </div>     
+    );
+};export default Index;
+

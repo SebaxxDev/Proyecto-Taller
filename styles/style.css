@@ -2,8 +2,8 @@
 
 html,
 body {
-  padding: 0; /*margen interno*/
-  margin: 0; /*margen externo del componente*/
+  padding: 0px;
+  margin: 0px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -11,227 +11,189 @@ body {
 * {
   box-sizing: border-box;
 }
-
-.container { /*El fondo completo*/
-  background-image: url('/images/background.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+.container{
+  background-image: url('/images/background.png');
+  background-repeat: no-repeat; /*El fondo NO se repite, es 1 solo*/
+  background-attachment: fixed; /*El fondo NO se mueve al hacer scroll*/
   background-size: cover;
-  /*background-color: #ebeff3;*/
-  min-height: 100vh; /*altura de la pagina*/
-  padding: 1px;
-  display: flex;
-  flex-direction: column; /*ordena los elementos en columnas o filas*/
-  justify-content: center; /*ajusta lo que tiene dentro cuando se aleja el zoom*/
-  align-items: center;
+  min-height: 100vh;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  grid-template-rows: repeat(5,1fr);
 }
 
-.barraSuperior {
-  background: #8a95f3;
-  width: 100%;
-  height: 80px;
-  border: 1px solid red;
-  padding: 10px;
-  text-align: center;
-  /*line-height: normal;*/
-  color: aliceblue;
-  
 
-/*
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 1000px;
-  width: 80%;
-  max-width: 1000px; ancho del grid
-  margin-top: 1rem;
-*/
+.titulo{ /*Proximas Evaluaciones*/
+  grid-area: 1/3/2/7;
+  margin-top: 10%;
+  font-size: 4rem;
+  text-align: center; 
 }
 
-main { /*dentro del fondo*/
-  background-color: rgb(90, 216, 143);
-  padding: 5rem 5rem; /*borde interno del main*/
-  margin: 20px; /*le da un borde externo de 20px a toda la pagina*/
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 1920px; /*ancho de todo el elemento main y lo que contiene*/
-  max-width: 1920px;
-  max-height: 1080px; 
+.logo{ /*Logo UACH izq arriba*/
+  grid-area: 1/1/2/2;
+  margin-top: 10%;
+  margin-left: 10%;
 }
-
-table{
-	background-color: white;
-	text-align: left;
-	border-collapse: collapse;
-	width: 100%;
-}
-
-th, td{
-	padding: 20px;
-  
-}
-
-thead{
-	background-color: #246355;
-	border-bottom: solid 5px #0F362D;
-	color: white;
-}
-
-tr:nth-child(even){
-	background-color: #ddd;
-}
-
-tr:hover{
-	background-color: #369681;
-	color: white;
-}
-
-footer {
-  background-color: rgb(192, 230, 88);
-  width: 1920px;
-  height: 50px;
-  border-top: 5px solid #7a0303;
-  display: flex;
-  justify-content: center; /*ajusta horizontalmente el texto*/
-  align-items: center;
-  font-size: 1.0em;
-}
-footer img {
-  margin-left: 0.5rem;
-}
-
-footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-a {
-  color: #090b0c;
-  text-decoration: none;
-}
-
-.menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.3em;
-  border-bottom: 1px solid #999999;
-  width: 100%;
-  background-color: #eaeaea;
-}
-
-.menu a {
-  margin: 10px 20px 10px 20px;
-  border-bottom: 3px solid #e0e0e0;
-  padding-bottom: 10px;
-  text-align: center;
-}
-
-.currentPage {
-  border-bottom: 3px solid #0070f3 !important;
-  color: #333333;
-}
-
-.counter {
-  font-size: 0.7em;
-  padding-left: 25px;
-  border: 0px !important;
-}
-.counter button {
-  padding: 1px 10px;
-  margin: 0;
-  font-size: 0.8em;
-  cursor: pointer;
-}
-.todo-list {
-}
-.todo-item {
-  display: flex;
-  padding: 10px;
-  border-bottom: 1px solid #e0e0e0;
-}
-.todo-item-title {
-  flex: 10;
-}
-.todo-item-done {
-  flex: 1;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
 .title {
-  vertical-align: middle;
-  margin: 0;
+  margin: 20px 101px  ;
   line-height: 1.15;
-  font-size: 3rem;
+  font-size: 2rem;
+  align-items: center;
+  text-align: center;
+}
+
+.tabla1{ /*tabla con bordes negros*/
+  display:grid;
+  grid-area: 1/1/9/11;/*area del grid*/
+  border:#000000 5px solid;
+  border-radius: 15px; /*redondea las esquinas*/
+  /*padding-top: 12px;
+  padding-bottom: 12px;*/
+  justify-content: center;
+  max-width: 100%;
+  max-height: 40vh;
+  background-color: rgb(233, 225, 182);
+  overflow-y: scroll;
+}
+
+.cajaFija{
+  grid-area: 2/2/3/8;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  max-height: 15%;
+  margin-top: 13%;
+  border-radius: 10px;
+  border: #000000 1px solid;
+  background-color: #33ff00;
+  max-width: 100%;
+  justify-self: auto;
+}
+.textoCodigo{
+  grid-area: 1/1/1/2;
+  font-size: 1.2rem;
+  font-style: oblique;
+  text-align: center;
+  border-right: 3px solid rgb(0, 0, 0);
+}
+.textoAsignatura{
+  grid-area: 1/2/1/3;
+  font-size: 1.2rem;
+  font-style: oblique;
+  text-align: center;
+  border-right: 3px solid rgb(0, 0, 0);
+}
+.textoTipo{
+  grid-area: 1/3/1/4;
+  font-size: 1.2rem;
+  font-style: oblique;
+  text-align: center;
+  border-right: 3px solid rgb(0, 0, 0);
+}
+.textoFecha{
+  grid-area: 1/4/1/5;
+  font-size: 1.2rem;
+  font-style: oblique;
+  text-align: center;
+}
+
+.tabla1 th{ /*codigo/asignatura/tipo/fecha*/
+  background-color: #00ff15;
+  min-width: 220px;
+}
+.tabla1 td{ /*cajas blancas*/
+  background-color: rgb(243, 235, 225);
+  min-width: 120px;
+}
+.tabla1 td, .tabla1 th{ /*aplica cambios a las cajas naranjas y blancas*/
+  border: 2px solid #000000;
+  padding: 8px; /*altura de cada rectángulo*/
+  font-size: 1.1rem;
+  text-align: center; /*centra el texto de las cajas blancas*/
+  width: 2000px;
+}
+.tabla1 td:first-child{ /*rectángulos con el codigo*/
+  /*min-width: 120px;*/
+  min-width: 100%;
+}
+.tabla1 td:nth-child(2){ /*rectángulos con el nombre de asignatura*/
+  /*min-width: 320px;*/
+  min-width: 100%;
+}
+.tabla1 td:nth-child(3){ /*rectángulos con el tipo*/
+  /*min-width: 120px;*/
+  min-width: 100%;
+}
+.tabla1 td:nth-child(4){ /*rectángulos con la fecha*/
+  /*min-width: 120px;*/
+  min-width: 100%;
+}
+
+.cajaRoja{ /*tabla roja abarca todo lo de dentro*/
+  display: grid;
+  grid-area: 2/3/2/7;
+  margin-top: 5%; /*se separa del tope*/
+  max-height: 40%; /*altura maxima según el grid en el que está*/
+  max-width: 100%; /*ancho maximo según el grid en el que está*/
   
 }
-
-.title,
-.description {
+.tabla2{ /*tabla roja interior*/
+  display:grid;
+  font-size: 1.7rem;
   text-align: center;
+  max-height: 100%;
+  max-width: 100%;
+  background-color: rgba(245, 77, 55, 0.808);
+  border: 5px solid rgb(0, 0, 0);
+  border-radius: 25px;
 }
 
-.description {
-  line-height: 1.5;
-  font-size: 1.2rem;
+.tabla2 td{
+  padding: 1px;
+}
+.tabla2 td:first-child{
+  width: 20%;
+  border-right: 5px solid rgb(0, 0, 0);
+}
+.tabla2 td:nth-child(2){
+  width: 10%;
+  border-right: 5px solid rgb(0, 0, 0);
+}
+.tabla2 td:nth-child(3){
+  width: 40%;
+  border-right: 5px solid rgb(0, 0, 0);
+}
+.tabla2 td:nth-child(4){ 
+  width: 30%;
 }
 
-code {
-  background: #bed8c0;
-  border-radius: 3px;
-  padding: 0.15rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.card { /*BOTONES*/
-  margin: 1rem;
-  flex-basis: 80%;
-  padding: 1.5rem;
-  text-align: center;
-  color: inherit;
-  text-decoration: none;
-  border: 4px solid #eaeaea; /*borde de los botones*/
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h3 {
-  margin: 0 0 1rem 0;
+.reloj{
+  grid-area: 1/8/2/9;
+  min-height: 20%;
+  max-height: 20%;
+  min-width: 70%;
+  max-width: 70%;
+  margin-top: 75%;
+  margin-right: 20%;
   font-size: 1.5rem;
+  font-style: oblique;
+  text-align: center;
+  border-radius: 25px;
+  border: #000000 3px solid;
+  background-color: #00ff15;
+  overflow: hidden; /*oculta el texto si se sale*/
 }
 
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+.botonFiltro{
+  grid-area: 9/10/10/11;
 }
 
-.logo {
-  height: 1em;
+.container2{
+  display: grid;
+  grid-area: 3/2/5/8;
+  max-width: 100%;
+  max-height: 40vh;
 }
 
 @media (max-width: 600px) {
