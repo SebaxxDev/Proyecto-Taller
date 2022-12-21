@@ -22,11 +22,7 @@ export async function hora(){
     console.log("fechaActual: ", fechaD_M_A)
     return fechaD_M_A
 }*/
-const retrievedValue = await fetch(`https://${process.env.VERCEL_URL}/api/make-check-at-backend/`, {
-      method: "POST",
-      headers: headers,
-      body: JSON.stringify({ someKey: 'someValue' }),
-    });
+
 
 
 export function LectorDatos(){

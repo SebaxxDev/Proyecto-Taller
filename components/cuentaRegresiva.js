@@ -1,9 +1,5 @@
 import { useState, useEffect } from "react";
-const retrievedValue = await fetch(`https://${process.env.VERCEL_URL}/api/make-check-at-backend/`, {
-      method: "POST",
-      headers: headers,
-      body: JSON.stringify({ someKey: 'someValue' }),
-    });
+
 
 export default function CuentaRegresiva(){
    
