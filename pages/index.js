@@ -13,16 +13,12 @@ import CuentaRegresiva from "../components/cuentaRegresiva";
 
 
 const Index = ()=>{
-   
     const [time, changeTime] = useState(new Date().toLocaleTimeString());
-
     useEffect(function(){
         setInterval(()=>{
             changeTime(new Date().toLocaleTimeString());
         },1000);
     }, []);
-
-
     return(                
         <div className="container">
             <Head>
@@ -31,7 +27,7 @@ const Index = ()=>{
             </Head>
             <div className="logo">
             <Image
-                src="/images/UachLogoLargo.png"
+                src="/images/logo_uach.png"
                 height={111}
                 width={425}
                 alt="Logo"
@@ -41,19 +37,7 @@ const Index = ()=>{
                 <TextoReloj texto={time}/>
             </div>
             <div className="cuentaRegresiva"><CuentaRegresiva/></div>
-            
             <div className="container2"> {LectorDatos()}</div>
-            
-            
-            
-            
-            
-            
-           
-
-            
-        
-            
     </div>     
     );
 };export default Index;
