@@ -32,16 +32,14 @@ const Index = ()=>{
                 width={425}
                 alt="Logo"
             /></div>
-            <h1 className="titulo">Próximas Actividades</h1>
             
+            <div className="reloj">
+            <TextoReloj texto={time}/>
+            </div>
+            <h1 className="titulo">Próximas Actividades</h1>
             <div className="cuentaRegresiva"><CuentaRegresiva/></div>
             <div className="container2"> {LectorDatos()}</div>
     </div>     
     );
 };export default Index;
 
-/*
-<div className="reloj">
-                <TextoReloj texto={time}/>
-            </div>
-*/
