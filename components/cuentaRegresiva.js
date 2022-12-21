@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 
+
 export default function CuentaRegresiva(){
+   
     
     var fechaAct = fecha()//fecha local actual 
     var horaAct = hora() //hora local actual  
@@ -8,9 +10,7 @@ export default function CuentaRegresiva(){
     
     var dias_faltantes = calculaDias(primer_ramo?.fecha,fechaAct) 
     var reloj_faltante = calculaReloj(primer_ramo?.hora, horaAct)
-    //console.log(reloj_faltante)
     
-    //console.log(dias_faltantes)
 
    
 
@@ -22,7 +22,7 @@ export default function CuentaRegresiva(){
                     <td scope="col">{primer_ramo?.codigo}</td>
                     <td scope="col">{primer_ramo?.evaluacion}</td>
                     <td scope="col">Tiempo Restante: {dias_faltantes}; {reloj_faltante}</td>
-                    <td scope="col">Queda un TRUCAZO</td>        
+                    <td scope="col">{fraseMotivacional(dias_faltantes)}</td>        
                 </tr>
                 </tbody>          
             </table>
@@ -145,4 +145,51 @@ export function calculaReloj(reloj_ramo, reloj){
     texto = hrs+":"+min+":"+sgd
     return texto
     
+}
+
+
+export function fraseMotivacional(diasFalt){
+    const [frases, setFrases] = useState([])
+
+    useEffect(()=>{
+        fetch("/data/frases.json")
+            .then(response => response.json())
+            .then(datos => {
+                setFrases(datos)
+            })
+    }, []);
+    //console.log("frases:", frases[0])
+    
+    
+    var i = diasFalt.split(" ")
+    i = diasFalt[0]
+    
+
+    if(i > 7){
+        //console.log("Tienes tiempo suficiente para sacarte una buena nota")
+        return frases[0]?.frase
+    }
+    if(i<=7 && i>5){
+        //console.log("Empieza a estudiar desde ahora")
+        return frases[1]?.frase
+    }
+    if(i<=5 && i>3){
+        return frases[2]?.frase
+    }
+    if(i<=3 && i>2){
+        //console.log("queda poquito")
+        return frases[3]?.frase
+    }
+    if(i<=2 && i>1){
+        return frases[4]?.frase
+    }
+    if(i==1){
+        //console.log("la prueba es mañana!!")
+        return frases[5]?.frase
+    }
+    
+    if(i == 0){
+        //console.log("Exito en tu prueba")
+        return frases[6]?.frase
+    }
 }
