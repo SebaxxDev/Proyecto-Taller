@@ -26,7 +26,6 @@ export async function hora(){
 
 
 export function LectorDatos(){
-    
     /*var fechaActual = fecha()
     var horaActual = hora()*/
     var fechaLocal = new Date().toLocaleString().replace('-','/').split(',')[0].replace('-','/');
@@ -41,7 +40,7 @@ export function LectorDatos(){
     }*/
 
     useEffect(()=>{
-        fetch("/data/asignaturas.json")
+        fetch("http://localhost:3000/data/asignaturas.json")
             .then(response => response.json())
             .then(datos => {
                 setDatable(datos)
@@ -52,6 +51,11 @@ export function LectorDatos(){
 
     var [value, setValue] = useState()
     if(value == undefined){
+        datable.sort((a,b)=>{ 
+            if(a.fecha[2] < b.fecha[2]){                    
+                return -1;
+            }
+        });
         datable.sort((a,b)=>{ 
             if(a.fecha[0] < b.fecha[0]){                    
                 return -1;
@@ -88,6 +92,7 @@ export function LectorDatos(){
     }
     useEffect(()=>{     
         if(value==0 || value==undefined){
+            
             datable.sort((a,b)=>{ 
                 if(a.fecha[0] < b.fecha[0]){                   
                     return -1;
@@ -96,16 +101,29 @@ export function LectorDatos(){
                 if(a.fecha[1] < b.fecha[1]){
                     return -1;
             }});
+            datable.sort((a,b)=>{ 
+                if(a.fecha[2] < b.fecha[2]){                    
+                    return -1;
+                }
+            });
+            
         }
-        if(value == 1){           
+        if(value == 1){     
+               
             datable.sort((a,b)=>{ 
                 if(a.fecha[0] > b.fecha[0]){                 
                     return -1;
-                }});
+            }});
             datable.sort((a,b)=>{ 
                 if(a.fecha[1] > b.fecha[1]){
                     return -1;
-                    }});
+            }});
+            datable.sort((a,b)=>{ 
+                if(a.fecha[2] > b.fecha[2]){                    
+                    return -1;
+                    }
+            });   
+            
         }
         if(value == 2){
             datable.sort((a,b)=>{ 
@@ -114,6 +132,11 @@ export function LectorDatos(){
                 }});
         }
         if(value== 3){
+            datable.sort((a,b)=>{ 
+                if(a.fecha[2] > b.fecha[2]){                    
+                    return -1;
+                    }
+            });
             datable.sort((a,b)=>{ 
                 if(a.fecha[0] < b.fecha[0]){                    
                     return -1;
@@ -169,20 +192,26 @@ export function LectorDatos(){
         <div className="tabla1">
         <div className="row">
             <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Código</th>
+                        <th scope="col">Asignatura</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Fecha y Hora</th>
+                        
+                    </tr>
+                </thead>
                 <tbody>
                     {datable.map(item => (
                         <tr key={item.id}>
                             <td><button onClick={() => {botonsito(item.codigo)}}>{item.codigo}</button></td>
                             <td><button onClick={() => {botonsito(item.codigo)}}>{item.asignatura}</button></td>
                             <td>{item.tipo}</td>
-                            <td>{item.fecha[0]}/{item.fecha[1]}/{item.fecha[2]}</td>        
+                            <td>{item.fecha[0]}/{item.fecha[1]}/{item.fecha[2]}; {item.hora}</td>        
                         </tr>
                     ))}
-                </tbody> 
-                <tfoot>
-                
-                </tfoot>    
-                </table>
+                </tbody>    
+            </table>
         </div>
         </div>
                     

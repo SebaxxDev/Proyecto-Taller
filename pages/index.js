@@ -41,13 +41,6 @@ const Index = ()=>{
 
             <div className="cajaRoja"><CuentaRegresiva/></div>
             
-            <div className="cajaFija">
-                <div className="textoCodigo">Código</div>
-                <div className="textoAsignatura">Asignatura</div>
-                <div className="textoTipo">Tipo</div>
-                <div className="textoFecha">Fecha</div>
-            </div>
-            
             <div className="container2"> {LectorDatos()}</div>
 
             <div className="linkinfoalumnos">

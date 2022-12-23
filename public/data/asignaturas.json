@@ -93,7 +93,7 @@
     "tipo":"Segunda Evaluación", 
     "porcentaje":"-%",
     "evaluacion":"SE",
-    "fecha":["12","01","22"],
+    "fecha":["12","01","23"],
     "hora":"10:30:00"},
     
 
@@ -165,22 +165,7 @@
     "evaluacion":"PP3",
     "fecha":["28","12","22"],
     "hora":"17:30:00"},
-    {
-    "codigo":"BAIN073", 
-    "asignatura":"Álgebra Lineal", 
-    "tipo":"Sustitutiva/Recuperativa",
-    "porcentaje": "-%", 
-    "evaluacion":"PR",
-    "fecha":["17","11","22"],
-    "hora":"17:30:00"},
-    {
-    "codigo":"BAIN073", 
-    "asignatura":"Álgebra Lineal", 
-    "tipo":"Segunda Evaluación",
-    "porcentaje": "-%", 
-    "evaluacion":"SE",
-    "fecha":["17","11","22"],
-    "hora":"17:30:00"},
+    
 
 
     {

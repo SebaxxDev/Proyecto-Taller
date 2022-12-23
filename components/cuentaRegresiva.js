@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 
-
 export default function CuentaRegresiva(){
-   
+    
     
     var fechaAct = fecha()//fecha local actual 
     var horaAct = hora() //hora local actual  
@@ -36,7 +35,7 @@ export function datos(fechaD_M_A){
     
     
     useEffect(()=>{
-        fetch("/data/asignaturas.json")
+        fetch("http://localhost:3000/data/asignaturas.json")
             .then(response => response.json())
             .then(datos => {
                 setDatable(datos)
@@ -152,7 +151,7 @@ export function fraseMotivacional(diasFalt){
     const [frases, setFrases] = useState([])
 
     useEffect(()=>{
-        fetch("/data/frases.json")
+        fetch("http://localhost:3000/data/frases.json")
             .then(response => response.json())
             .then(datos => {
                 setFrases(datos)
