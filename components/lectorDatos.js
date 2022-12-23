@@ -52,6 +52,11 @@ export function LectorDatos(){
     var [value, setValue] = useState()
     if(value == undefined){
         datable.sort((a,b)=>{ 
+            if(a.fecha[2] < b.fecha[2]){                    
+                return -1;
+            }
+        });
+        datable.sort((a,b)=>{ 
             if(a.fecha[0] < b.fecha[0]){                    
                 return -1;
             }
@@ -87,6 +92,7 @@ export function LectorDatos(){
     }
     useEffect(()=>{     
         if(value==0 || value==undefined){
+            
             datable.sort((a,b)=>{ 
                 if(a.fecha[0] < b.fecha[0]){                   
                     return -1;
@@ -95,16 +101,29 @@ export function LectorDatos(){
                 if(a.fecha[1] < b.fecha[1]){
                     return -1;
             }});
+            datable.sort((a,b)=>{ 
+                if(a.fecha[2] < b.fecha[2]){                    
+                    return -1;
+                }
+            });
+            
         }
-        if(value == 1){           
+        if(value == 1){     
+               
             datable.sort((a,b)=>{ 
                 if(a.fecha[0] > b.fecha[0]){                 
                     return -1;
-                }});
+            }});
             datable.sort((a,b)=>{ 
                 if(a.fecha[1] > b.fecha[1]){
                     return -1;
-                    }});
+            }});
+            datable.sort((a,b)=>{ 
+                if(a.fecha[2] > b.fecha[2]){                    
+                    return -1;
+                    }
+            });   
+            
         }
         if(value == 2){
             datable.sort((a,b)=>{ 
@@ -113,6 +132,11 @@ export function LectorDatos(){
                 }});
         }
         if(value== 3){
+            datable.sort((a,b)=>{ 
+                if(a.fecha[2] > b.fecha[2]){                    
+                    return -1;
+                    }
+            });
             datable.sort((a,b)=>{ 
                 if(a.fecha[0] < b.fecha[0]){                    
                     return -1;
@@ -173,7 +197,7 @@ export function LectorDatos(){
                         <th scope="col">Código</th>
                         <th scope="col">Asignatura</th>
                         <th scope="col">Tipo</th>
-                        <th scope="col">Fecha</th>
+                        <th scope="col">Fecha y Hora</th>
                         
                     </tr>
                 </thead>
@@ -183,7 +207,7 @@ export function LectorDatos(){
                             <td><button onClick={() => {botonsito(item.codigo)}}>{item.codigo}</button></td>
                             <td><button onClick={() => {botonsito(item.codigo)}}>{item.asignatura}</button></td>
                             <td>{item.tipo}</td>
-                            <td>{item.fecha[0]}/{item.fecha[1]}/{item.fecha[2]}</td>        
+                            <td>{item.fecha[0]}/{item.fecha[1]}/{item.fecha[2]}; {item.hora}</td>        
                         </tr>
                     ))}
                 </tbody> 
