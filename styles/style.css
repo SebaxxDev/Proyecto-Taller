@@ -100,7 +100,7 @@ body {
 .tabla2{ /*tabla roja interior*/
   display: grid;
   grid-area: 1/1/2/2;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-align: center;
 }
 
@@ -136,7 +136,7 @@ body {
   text-align: center;
   border-radius: 25px;
   border: 4px solid rgb(0, 162, 255);
-  background-color: #ffffffc9;
+  background-color: #ffffff;
   overflow: hidden; /*oculta el texto si se sale*/
 }
 
