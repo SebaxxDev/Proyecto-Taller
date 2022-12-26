@@ -13,7 +13,6 @@ import {
     
 } from '@chakra-ui/react'
 import { bodyStreamToNodeStream } from "next/dist/server/body-streams";
-import Profesores from "../pages/prueba";
 
 /*
 export async function hora(){
