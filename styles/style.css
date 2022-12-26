@@ -67,6 +67,12 @@ body {
   overflow-y: scroll;
 }
 
+.tabla1 thead tr th{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
 .tabla1 th{ /*codigo/asignatura/tipo/fecha*/
   background-color: #ce9a2a ;
   min-width: 220px;

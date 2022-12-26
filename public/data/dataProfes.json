@@ -1,0 +1,17 @@
+[
+    {
+        "nombre":"Raul Cisternas",
+        "ramos":["BAIN085","BAIN081"],
+        "correo":"raul.cisternas@uach.cl"
+    },
+    {
+        "nombre":"Javier Arriaza",
+        "ramos":["BAIN085","BAIN073"],
+        "correo":"jarriaza@uach.cl"
+    },
+    {
+        "nombre":"Paulo Alvarez",
+        "ramos":["BAIN087"],
+        "correo":"paulo.alvarez@uach.cl"
+    }
+]

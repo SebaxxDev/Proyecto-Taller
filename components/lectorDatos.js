@@ -13,6 +13,7 @@ import {
     
 } from '@chakra-ui/react'
 import { bodyStreamToNodeStream } from "next/dist/server/body-streams";
+import Profesores from "../pages/prueba";
 
 /*
 export async function hora(){
@@ -40,7 +41,7 @@ export function LectorDatos(){
     }*/
 
     useEffect(()=>{
-        fetch("http://localhost:3000/data/asignaturas.json")
+        fetch("/data/asignaturas.json")
             .then(response => response.json())
             .then(datos => {
                 setDatable(datos)
@@ -224,10 +225,17 @@ export function LectorDatos(){
     )
 }
 
-function botonsito(item) {
+function botonsito(cod) {
+   /*
+    //console.log("item1: ",cod)
+    var variable = {
+        codig: cod
+    }
+    module.exports = {variable}
+    Profesores()
    
-    console.log("item: ",item)
-    
-   
+    window.open("/prueba", "ventana","width=600,height=300,scrollbars=NO")
+    */
     
   }
+  
