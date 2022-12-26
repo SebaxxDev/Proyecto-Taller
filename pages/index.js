@@ -27,8 +27,8 @@ const Index = ()=>{
             <div className="logo">
             <Image
                 src="/images/logo_uach.png"
-                height={111}
-                width={425}
+                width={524}
+                height={130}
                 alt="Logo"
             />
             </div>
@@ -47,20 +47,22 @@ const Index = ()=>{
                 <a href="https://secure20.uach.cl/webInfoalumnos/login.aspx" target="_blank">
                 <Image
                 src="/images/infoalumnos.png"
-                height={512}
-                width={512}
+                height={58}
+                width={58}
                 alt="Logo"
             /></a>
+            Infoalumnos
             </div>
 
             <div className="linksiveduc">
                 <a href="https://siveducmd.uach.cl/" target="_blank">
                 <Image
                 src="/images/infoalumnos.png"
-                height={512}
-                width={512}
+                height={58}
+                width={58}
                 alt="Logo"
             /></a>
+            Siveduc
             </div>
 
         </div>     
