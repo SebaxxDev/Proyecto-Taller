@@ -157,7 +157,7 @@ export function LectorDatos(){
                     Filtro
                 </MenuButton>
                 <MenuList>
-                    <MenuOptionGroup defaultValue='3' title='Orenar por:' type='radio'>
+                    <MenuOptionGroup defaultValue='3' title='Ordenar por:' type='radio'>
                         <MenuItemOption onClick={() => {setValue(0)}} value='0'>Mas Antiguo</MenuItemOption>
                         <MenuItemOption onClick={() => {setValue(1)}} value='1'>Mas Reciente</MenuItemOption>
                         <MenuItemOption onClick={() => {setValue(2)}} value='2'>Código Asignatura</MenuItemOption>
