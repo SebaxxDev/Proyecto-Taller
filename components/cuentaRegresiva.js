@@ -1,13 +1,18 @@
 import { useState, useEffect } from "react";
-import { FechaLocal } from "./fechaLocal";
-import { HoraLocal } from "./horaLocal";
+
 
 export default function CuentaRegresiva(){
-    var fechaAct = FechaLocal()//fecha local actual 
-    var horaAct = HoraLocal() //hora local actual  
+   
+    
+    var fechaAct = fecha()//fecha local actual 
+    var horaAct = hora() //hora local actual  
     var primer_ramo = datos(fechaAct) //datos del ramo mas cercano actual
+    
     var dias_faltantes = calculaDias(primer_ramo?.fecha,fechaAct) 
     var reloj_faltante = calculaReloj(primer_ramo?.hora, horaAct)
+    
+
+   
 
     return(     
         <div className="tabla2">
@@ -22,10 +27,14 @@ export default function CuentaRegresiva(){
                 </tbody>          
             </table>
         </div> 
-    )}
+    )
+
+}
 
 export function datos(fechaD_M_A){
     const [datable, setDatable] = useState([])
+    
+    
     useEffect(()=>{
         fetch("/data/asignaturas.json")
             .then(response => response.json())
@@ -54,7 +63,10 @@ export function datos(fechaD_M_A){
                     var aux1 = datable[j-1]
                     datable[j-1] = datable[j]
                     datable[j] = aux1
-        }}}}
+                }  
+            }                   
+        }               
+    }
     for(var k=1; k<cont;k++){
         var aux2 = datable[k]
         var l = k -1
@@ -67,10 +79,26 @@ export function datos(fechaD_M_A){
     return(datable[0])
 }
 
+export function hora(){
+    var fechaLocal = new Date().toLocaleString().replace('-','/').split(',')[1].replace('-','/');
+    
+    var fechaD_M_A = fechaLocal
+   
+    return fechaD_M_A
+}
+
+export function fecha(){
+    var fechaLocal = new Date().toLocaleString().replace('-','/').split(',')[0].replace('-','/');
+    var fechaAct = fechaLocal.split('/') //fecha local actual
+    return fechaAct
+}
+
 export function calculaDias(fecha_ramo,fechas){//pulir la funcion para el tema de los meses
     //fecha ramo > fecha local
     var texto = ""
+    
     var dias = fecha_ramo?.[0]-fechas[0]
+    
     
     if(dias == 1){
         texto = dias + " día" 
@@ -88,6 +116,7 @@ export function calculaReloj(reloj_ramo, reloj){
     var texto = ""
     var reloj_1 = reloj.split(":")
     var reloj_ram = reloj_ramo?.split(":")
+    
     var hrs =  reloj_ram?.[0] - reloj_1[0]
     var min = reloj_ram?.[1] - reloj_1[1]
     if(reloj_ram?.[2] == 0){
@@ -102,6 +131,7 @@ export function calculaReloj(reloj_ramo, reloj){
     if(hrs<0){
         hrs = 24+hrs
     }
+
     if(sgd < 10){
         sgd = "0"+sgd
     }
@@ -111,6 +141,7 @@ export function calculaReloj(reloj_ramo, reloj){
     if(hrs < 10){
         hrs = "0"+hrs
     }
+
     texto = hrs+":"+min+":"+sgd
     return texto
     
@@ -121,16 +152,19 @@ export function fraseMotivacional(diasFalt){
     const [frases, setFrases] = useState([])
 
     useEffect(()=>{
-        fetch("http://localhost:3000/data/frases.json")
+        fetch("/data/frases.json")
             .then(response => response.json())
             .then(datos => {
                 setFrases(datos)
             })
     }, []);
     //console.log("frases:", frases[0])
+    
+    
     var i = diasFalt.split(" ")
     i = diasFalt[0]
     
+
     if(i > 7){
         //console.log("Tienes tiempo suficiente para sacarte una buena nota")
         return frases[0]?.frase

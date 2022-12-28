@@ -13,7 +13,7 @@ import {
     
 } from '@chakra-ui/react'
 import { bodyStreamToNodeStream } from "next/dist/server/body-streams";
-import { HoraLocal } from "./horaLocal";
+
 
 
 export function LectorDatos(){
