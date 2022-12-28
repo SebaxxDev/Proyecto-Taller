@@ -22,8 +22,8 @@ const Index = ()=>{
             <div className="logo">
                 <Image
                     src="/images/logo_uach.png"
-                    width={524}
-                    height={130}
+                    width={2600}
+                    height={650}
                     alt="Logo"
             /></div>
             <h1 className="titulo">Próximas Evaluaciones</h1>
