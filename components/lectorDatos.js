@@ -13,32 +13,13 @@ import {
     
 } from '@chakra-ui/react'
 import { bodyStreamToNodeStream } from "next/dist/server/body-streams";
-import Profesores from "../pages/prueba";
-
-/*
-export async function hora(){
-    var fechaLocal = new Date().toLocaleString().replace('-','/').split(',')[1].replace('-','/');
-    
-    var fechaD_M_A = fechaLocal
-    console.log("fechaActual: ", fechaD_M_A)
-    return fechaD_M_A
-}*/
-
+import { HoraLocal } from "./horaLocal";
 
 
 export function LectorDatos(){
-    /*var fechaActual = fecha()
-    var horaActual = hora()*/
     var fechaLocal = new Date().toLocaleString().replace('-','/').split(',')[0].replace('-','/');
-    
     var fechaD_M_A = fechaLocal.split('/')
-
     const [datable, setDatable] = useState([])
-    /*
-    const btn = document.querySelector("button")
-    btn.addEventListener("click", function()){
-        
-    }*/
 
     useEffect(()=>{
         fetch("/data/asignaturas.json")
@@ -48,25 +29,20 @@ export function LectorDatos(){
             })
     }, []);
 
-
-
     var [value, setValue] = useState()
     if(value == undefined){
         datable.sort((a,b)=>{ 
             if(a.fecha[2] < b.fecha[2]){                    
                 return -1;
-            }
-        });
+        }});
         datable.sort((a,b)=>{ 
             if(a.fecha[0] < b.fecha[0]){                    
                 return -1;
-            }
-        });
+        }});
         datable.sort((a,b)=>{ 
             if(a.fecha[1] < b.fecha[1]){
                 return -1;
-            }
-        });
+        }});
         var cont=0
         var n=datable.length
         for(var i=0; i<n; i++){
@@ -77,10 +53,7 @@ export function LectorDatos(){
                         var aux1 = datable[j-1]
                         datable[j-1] = datable[j]
                         datable[j] = aux1
-                    }  
-                }                   
-            }               
-        }
+        }}}}
         for(var k=1; k<cont;k++){
             var aux2 = datable[k]
             var l = k -1
@@ -89,11 +62,9 @@ export function LectorDatos(){
                 l--
         }
         datable[l+1] = aux2
-        }  
-    }
+        }}
     useEffect(()=>{     
         if(value==0 || value==undefined){
-            
             datable.sort((a,b)=>{ 
                 if(a.fecha[0] < b.fecha[0]){                   
                     return -1;
@@ -107,10 +78,8 @@ export function LectorDatos(){
                     return -1;
                 }
             });
-            
         }
         if(value == 1){     
-               
             datable.sort((a,b)=>{ 
                 if(a.fecha[0] > b.fecha[0]){                 
                     return -1;
@@ -136,16 +105,15 @@ export function LectorDatos(){
             datable.sort((a,b)=>{ 
                 if(a.fecha[2] > b.fecha[2]){                    
                     return -1;
-                    }
-            });
+            }});
             datable.sort((a,b)=>{ 
                 if(a.fecha[0] < b.fecha[0]){                    
                     return -1;
-                }});
+            }});
             datable.sort((a,b)=>{ 
                 if(a.fecha[1] < b.fecha[1]){
                     return -1;
-                    }});
+            }});
             var cont=0
             var n=datable.length
             for(var i=0; i<n; i++){
@@ -156,10 +124,7 @@ export function LectorDatos(){
                             var aux1 = datable[j-1]
                             datable[j-1] = datable[j]
                             datable[j] = aux1
-                        }  
-                    }                   
-                }               
-            }
+            }}}}
         for(var k=1; k<cont;k++){
             var aux2 = datable[k]
             var l = k -1
@@ -168,12 +133,9 @@ export function LectorDatos(){
                 l--
             }
             datable[l+1] = aux2
-        }  
-        }
-    }, [value]);
+    }}}, [value]);
 
     return(
-        
         <>
         <div className="botonFiltro">
             <Menu>
@@ -204,9 +166,10 @@ export function LectorDatos(){
                 </thead>
                 <tbody>
                     {datable.map(item => (
-                        <tr key={item.id}>
-                            <td><button onClick={() => {botonsito(item.codigo)}}>{item.codigo}</button></td>
-                            <td><button onClick={() => {botonsito(item.codigo)}}>{item.asignatura}</button></td>
+                        <tr key={item.id} id="filas" style="color: green">
+                            {colores(item.fecha[0], item.fecha[1], item.fecha[2], item.hora)}
+                            <td>{item.codigo}</td>
+                            <td>{item.asignatura}</td>
                             <td>{item.tipo}</td>
                             <td>{item.fecha[0]}/{item.fecha[1]}/{item.fecha[2]}; {item.hora}</td>        
                         </tr>
@@ -218,11 +181,16 @@ export function LectorDatos(){
                 </table>
         </div>
         </div>
-                    
-        
-        
         </>
     )
+}
+
+function colores(dia, mes, año, hora){
+    //console.log(dia,"/",mes,"/",año,"; ",hora, " , funciona")
+    var datosActual = HoraLocal()
+    //console.log("hora: ",datosActual)
+    const changeDOM = document.getElementById('filas')
+    changeDOM.style.color = 'green'
 }
 
 function botonsito(cod) {
