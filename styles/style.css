@@ -6,6 +6,10 @@ body {
   margin: 0px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-image: url('/images/background.png');
+  background-repeat: no-repeat; /*El fondo NO se repite, es 1 solo*/
+  background-attachment: fixed; /*El fondo NO se mueve al hacer scroll*/
+  background-size: cover;
 }
 
 * {
@@ -19,8 +23,9 @@ body {
   min-height: 100%;
   max-width: 100%;
   display: grid;
-  grid-template-columns: repeat(8,1fr);
-  grid-template-rows: repeat(5,1fr);
+  grid-template-columns: repeat(8,minmax(100px,200px));
+  grid-template-rows: repeat(5,minmax(100px,180px));
+  justify-content: center;
 }
 
 
