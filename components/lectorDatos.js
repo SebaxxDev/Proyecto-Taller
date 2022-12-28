@@ -184,7 +184,7 @@ export function LectorDatos(){
                             <td><button onClick={() => {botonsito(item.codigo)}}>{item.codigo}</button></td>
                             <td><button onClick={() => {botonsito(item.codigo)}}>{item.asignatura}</button></td>
                             <td>{item.tipo}</td>
-                            <td>{item.fecha[0]}/{item.fecha[1]}/{item.fecha[2]}</td>        
+                            <td>{item.fecha[0]}/{item.fecha[1]}/{item.fecha[2]}; {item.hora}</td>        
                         </tr>
                     ))}
                 </tbody> 
