@@ -143,7 +143,7 @@ export function LectorDatos(){
                     Filtro
                 </MenuButton>
                 <MenuList>
-                    <MenuOptionGroup defaultValue='3' title='Orenar por:' type='radio'>
+                    <MenuOptionGroup defaultValue='3' title='Ordenar por:' type='radio'>
                         <MenuItemOption onClick={() => {setValue(0)}} value='0'>Mas Antiguo</MenuItemOption>
                         <MenuItemOption onClick={() => {setValue(1)}} value='1'>Mas Reciente</MenuItemOption>
                         <MenuItemOption onClick={() => {setValue(2)}} value='2'>Código Asignatura</MenuItemOption>
@@ -166,8 +166,8 @@ export function LectorDatos(){
                 </thead>
                 <tbody>
                     {datable.map(item => (
-                        <tr key={item.id} id="filas" style="color: green">
-                            {colores(item.fecha[0], item.fecha[1], item.fecha[2], item.hora)}
+                        <tr>
+                           
                             <td>{item.codigo}</td>
                             <td>{item.asignatura}</td>
                             <td>{item.tipo}</td>
@@ -186,11 +186,11 @@ export function LectorDatos(){
 }
 
 function colores(dia, mes, año, hora){
-    //console.log(dia,"/",mes,"/",año,"; ",hora, " , funciona")
+    /*//console.log(dia,"/",mes,"/",año,"; ",hora, " , funciona")
     var datosActual = HoraLocal()
     //console.log("hora: ",datosActual)
     const changeDOM = document.getElementById('filas')
-    changeDOM.style.color = 'green'
+    changeDOM.style.color = 'green'*/
 }
 
 function botonsito(cod) {
